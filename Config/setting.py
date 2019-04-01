@@ -26,7 +26,7 @@ if DB_TYPE == 'SSDB':
     DB_PORT = getenv('ssdb_port', '6379')
 elif DB_TYPE == 'MONGODB':
     DB_HOST = getenv('mongodb_host', '127.0.0.1')
-    DB_PORT = getenv('mongodb_host', '27017')
+    DB_PORT = int(getenv('mongodb_host', '27017'))
 else:
     raise ConfigError('Unknown database type, your environment variable `db_type` should be one of SSDB/MONGODB.')
 
